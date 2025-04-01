@@ -26,13 +26,25 @@ final class ShoppingListKataTest extends TestCase
     /**
      * @test
      */
-    public function givenAProductAddList(): void
+    public function givenAProductWithoutNumberAddListOne(): void
     {
         $product = new ShoppingListKata();
 
         $result = $product->trateProduct('añadir pan');
 
         $this->assertEquals('pan x1', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function givenAProductWithNumberAddListNumber(): void
+    {
+        $product = new ShoppingListKata();
+
+        $result = $product->trateProduct('añadir pan 3');
+
+        $this->assertEquals('pan x3', $result);
     }
 
 

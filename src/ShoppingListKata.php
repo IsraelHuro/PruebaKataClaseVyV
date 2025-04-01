@@ -6,14 +6,22 @@ class ShoppingListKata{
 
     public function trateProduct(string $sentence): string
     {
-
         $fullProduct = explode(" ", $sentence);
 
         if (count($fullProduct) < 3 && count($fullProduct) > 1) {
-            $product = $fullProduct[1];
             $number = 1;
-            return $fullProduct[1]. ' x'.$number;
+            $lista = array( $fullProduct[1]. ' x'.$number);
+            foreach ($lista as $product) {
+                return $product;
+            }
+        }
 
+        if (count($fullProduct) === 3) {
+            $number = $fullProduct[2];
+            $lista = array( $fullProduct[1]. ' x'.$number);
+            foreach ($lista as $product) {
+                return $product;
+            }
         }
 
         return '';
