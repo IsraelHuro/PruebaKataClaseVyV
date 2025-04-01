@@ -13,7 +13,7 @@ final class ShoppingListKataTest extends TestCase
     /**
      * @test
      */
-    public function EmptyListReturnNothing(): void
+    public function emptyListReturnNothing(): void
     {
         $product = new ShoppingListKata();
 
@@ -21,6 +21,18 @@ final class ShoppingListKataTest extends TestCase
 
         $this->assertEquals('', $result);
 
+    }
+
+    /**
+     * @test
+     */
+    public function givenAProductAddList(): void
+    {
+        $product = new ShoppingListKata();
+
+        $result = $product->trateProduct('añadir pan');
+
+        $this->assertEquals('pan x1', $result);
     }
 
 
