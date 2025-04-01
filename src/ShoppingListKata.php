@@ -4,6 +4,11 @@ namespace Deg540\StringCalculatorPHP;
 
 class ShoppingListKata{
 
+
+    public function __construct()
+    {
+    }
+
     public function trateProduct(string $sentence): string
     {
         $fullProduct = explode(" ", $sentence);

@@ -42,5 +42,15 @@ final class ShoppingListKataTest extends TestCase
         $this->assertEquals('pan x3',$this->shoppingListKata->trateProduct('añadir pan 3'));
     }
 
+    /**
+     * @test
+     */
+    public function givenAProductWithProductInListAddListNumberReturnList(): void
+    {
+        $this->assertEquals('pan x3',$this->shoppingListKata->trateProduct('añadir pan 3'));
+    }
+
+
+
 
 }
