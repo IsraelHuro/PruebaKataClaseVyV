@@ -10,16 +10,19 @@ use PHPUnit\Framework\TestCase;
 
 final class ShoppingListKataTest extends TestCase
 {
+    private ShoppingListKata $shoppingListKata;
+    protected function setUp(): void //setUp es lo que corre antes de cualquier tipo de test
+    {
+        parent::setUp();
+        $this->shoppingListKata = new ShoppingListKata();
+    }
+
     /**
      * @test
      */
     public function emptyListReturnNothing(): void
     {
-        $product = new ShoppingListKata();
-
-        $result = $product->trateProduct('');
-
-        $this->assertEquals('', $result);
+        $this->assertEquals('',$this->shoppingListKata->trateProduct(''));
 
     }
 
@@ -28,11 +31,7 @@ final class ShoppingListKataTest extends TestCase
      */
     public function givenAProductWithoutNumberAddListOne(): void
     {
-        $product = new ShoppingListKata();
-
-        $result = $product->trateProduct('añadir pan');
-
-        $this->assertEquals('pan x1', $result);
+        $this->assertEquals('pan x1',$this->shoppingListKata->trateProduct('añadir pan'));
     }
 
     /**
@@ -40,11 +39,7 @@ final class ShoppingListKataTest extends TestCase
      */
     public function givenAProductWithNumberAddListNumber(): void
     {
-        $product = new ShoppingListKata();
-
-        $result = $product->trateProduct('añadir pan 3');
-
-        $this->assertEquals('pan x3', $result);
+        $this->assertEquals('pan x3',$this->shoppingListKata->trateProduct('añadir pan 3'));
     }
 
 
